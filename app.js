@@ -37,7 +37,7 @@ app.post("/upload", (req, res) => {
             await worker.loadLanguage('eng');
             await worker.initialize('eng');
             const { data: { text } } = await worker.recognize(`./uploads/${req.file.originalname}`);
-            // console.log(text);
+            console.log(text);
             const { data } = await worker.getPDF('OCR Result');
             fs.writeFileSync('ocr-result.pdf', Buffer.from(data));
             console.log('PDF generated: ocr-result.pdf');
@@ -48,7 +48,7 @@ app.post("/upload", (req, res) => {
 });
 app.get("/download", (req, res) => {
     const file = `${__dirname}/ocr-result.pdf`;
-    res.download(file);
+    res.sendFile(file);
 });
 /*app.post("/upload", (req,res,next) => {
     upload(req, res, err => {

@@ -2,14 +2,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCR Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>OCR</title>
 </head>
 <body>
-    <h1>OCR APP</h1>
+    <div class="intro py-3 text-center" style="background-color: gray; height: 100vh;">
+        <div class="container"  >
+            <h1 class="text-warning display-3 my-4" class="lead" ><strong>Optical Character Recognition</strong></h1>
+        </div>
+    
     <form action="/upload" method="POST" enctype="multipart/form-data">
-    <input type="file" name="abdullah">
-    <button type="submit">Run</button>
+    <input type="file" name="abdullah" class="btn btn-info mx-5 my-4">
+    <button type="submit" class="btn btn-success btn-lg mx-5 my-4">Run</button>
     </form>
+</div>
     
 </body>
 </html>
